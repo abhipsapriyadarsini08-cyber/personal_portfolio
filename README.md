@@ -108,4 +108,5 @@ Add more project cards
 
 Include a dark/light mode toggle
 
-Add a contact form connected to email
+Add a contact form connected to email - abhipsapriyadarsini08@gmail.com
+
