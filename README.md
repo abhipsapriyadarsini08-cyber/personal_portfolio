@@ -26,14 +26,23 @@ It’s a colorful, animated, and glowing portfolio built using HTML, CSS, and Ja
 
 Abhipsa_Portfolio/
 │
+
 ├── index.html
+
 │
+
 ├── css/
+
 │   └── style.css
+
 │
+
 ├── js/
+
 │   └── script.js
+
 │
+
 └── README.md
 
 
