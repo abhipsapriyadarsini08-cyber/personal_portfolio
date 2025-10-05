@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #f64a83, #79dad6);
+  color: #1c1b1b;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Floating stars background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.stars::before, .stars::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(2px 2px at 20px 20px, #ffb5b5, transparent),
+              radial-gradient(2px 2px at 60px 100px, #fca6a6, transparent),
+              radial-gradient(2px 2px at 200px 150px, #ff9e9e, transparent);
+  animation: moveStars 20s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(100px); }
+}
+
+/* Navbar */
+header {
+  background: linear-gradient(90deg, #6aa3d9, #ff6ea3);
+  padding: 15px 40px;
+  box-shadow: 0 0 25px rgba(255, 144, 160, 0.7);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  color: rgb(215, 18, 18);
+  text-shadow: 0 0 12px #0b00d9;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: rgb(204, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #f00d0d;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Typing Effect */
+.typing-text {
+  color: #fff;
+  font-size: 38px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #ff4, 0 0 30px #f0f;
+  height: 50px;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #fff, 0 0 25px #ff0, 0 0 35px #0ff; }
+  50% { text-shadow: 0 0 25px #f0f, 0 0 40px #ff4, 0 0 60px #0ff; }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 3s forwards 1s;
+  color: white;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Button */
+.magic-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+  border: none;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #9b2f3f;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite;
+}
+
+.magic-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.4);
+  transition: 0.5s;
+}
+
+.magic-btn:hover::before {
+  left: 100%;
+}
+
+.magic-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px #ffe066;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffb6c1; }
+  50% { box-shadow: 0 0 25px #ffd6a5; }
+  100% { box-shadow: 0 0 10px #ffb6c1; }
+}
+
+/* Sections */
+section {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.about, .skills, .projects, .contact {
+  animation: floaty 6s infinite ease-in-out;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Skills */
+.skill-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.glow-box {
+  background: linear-gradient(135deg, #ffb3c6, #a2d2ff);
+  padding: 20px 40px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 20px #ffb6c1;
+  transition: 0.3s;
+}
+
+.glow-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ffd6a5;
+}
+
+/* Projects */
+.project-card {
+  margin: 20px auto;
+  padding: 25px;
+  width: 80%;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #a2d2ff, #cdb4db);
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffd6a5;
+}
+
+.rainbow-border {
+  border: 3px solid transparent;
+  background-image: linear-gradient(#a2d2ff, #cdb4db),
+                    linear-gradient(45deg, #ffafcc, #bde0fe, #ffd6a5, #caffbf);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #a2d2ff, #ffafcc);
+  color: white;
+  text-shadow: 0 0 10px #fff;
+}
